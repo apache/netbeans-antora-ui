@@ -17,20 +17,16 @@
     specific language governing permissions and limitations
     under the License.
 
-*/%>
-<%/*
-
-    page-noaside.gsp: A main area with no aside.
+    tutorial.gsp: A main area with a right aside for TOCs and tutorial sections.
 
 */%>
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en" dir="ltr">
     <%include "head.gsp"%>
     <body>
         <%include "menu.gsp"%>
         <%include "news.gsp"%>
         <div class='grid-container main-content'>
-            <%include "wiki-index.gsp"%>
             ${content.body}
             <%include "tools.gsp"%>
         </div>
@@ -38,12 +34,11 @@
 
         <script src="/js/vendor/jquery-3.2.1.min.js"></script>
         <script src="/js/vendor/what-input.js"></script>
+        <script src="/js/vendor/jquery.colorbox-min.js"></script>
         <script src="/js/vendor/foundation.min.js"></script>
         <script src="/js/netbeans.js"></script>
-        <script src="/js/vendor/jquery.colorbox-min.js"></script>
-        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
         <script>
-            <% // NOTE: Plain jquery stuff needs to be quoted in gsp pages %>
+            <% // NOTE: Plain jquery stuff needs to be quoted in gsp pages, so we quote with ${' ... '} %>
             ${'$(function(){ $(document).foundation(); });'}
         </script>
         <% if (content.syntax) { %>
@@ -52,6 +47,5 @@
         ${' $(document).ready(function() { $("pre code").each(function(i, block) { hljs.highlightBlock(block); }); }); '}
         </script>
         <% } %>
-
     </body>
 </html>
