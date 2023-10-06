@@ -1,4 +1,4 @@
-<%/*
+{{!
 
     Licensed to the Apache Software Foundation (ASF) under one
     or more contributor license agreements.  See the NOTICE file
@@ -17,14 +17,21 @@
     specific language governing permissions and limitations
     under the License.
 
-*/%>
-<!-- src/templates/news -->
-<section class="hero news alternate">
-    <div class='grid-container'>
-        <div class='cell'>
-            <div class="annotation">Latest release</div>
-            <h1>Apache NetBeans 19</h1>
-            <p><a class="button success" href="/download/nb19/">Download</a></p>
-        </div>
+    page.gsp: A main area with a right aside for TOCs.
+
+}}
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  {{>head}}
+  <body>
+    {{>menu}}
+    {{>news}}
+    <div class='grid-container main-content'>
+      <h1 class="sect0">{{{page.title}}}</h1>
+      {{{page.contents}}}
+      {{>tools}}
     </div>
-</section>
+    {{>footer}}
+    {{>scripts}}
+  </body>
+</html>

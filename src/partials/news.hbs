@@ -1,4 +1,4 @@
-<%/*
+{{!
 
     Licensed to the Apache Software Foundation (ASF) under one
     or more contributor license agreements.  See the NOTICE file
@@ -17,21 +17,14 @@
     specific language governing permissions and limitations
     under the License.
 
-    page.gsp: A main area with a right aside for TOCs.
-
-*/%>
-<!doctype html>
-<html class="no-js" lang="en" dir="ltr">
-  <%include "templatesparts/head.gsp"%>
-  <body>
-    <%include "templatesparts/menu.gsp"%>
-    <%include "templatesparts/news.gsp"%>
-    <div class='grid-container main-content'>
-      <h1 class="sect0">${content.title}</h1>
-      ${content.body}
-      <%include "templatesparts/tools.gsp"%>
+}}
+<!-- src/templates/news -->
+<section class="hero news alternate">
+    <div class='grid-container'>
+        <div class='cell'>
+            <div class="annotation">Latest release</div>
+            <h1>Apache NetBeans 19</h1>
+            <p><a class="button success" href="/download/nb19/">Download</a></p>
+        </div>
     </div>
-    <%include "templatesparts/footer.gsp"%>
-    <%include "templatesparts/scripts.gsp"%>
-  </body>
-</html>
+</section>

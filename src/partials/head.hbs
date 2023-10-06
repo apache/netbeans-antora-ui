@@ -1,4 +1,4 @@
-<%/*
+{{!
 
     Licensed to the Apache Software Foundation (ASF) under one
     or more contributor license agreements.  See the NOTICE file
@@ -17,28 +17,28 @@
     specific language governing permissions and limitations
     under the License.
 
-*/%>
+}}
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title><%if (content.title) {%>${content.title}<% } else { %>Apache NetBeans<% }%></title>
+    <title>{{#if page.title }}{{{page.title}}}{{else}}Apache NetBeans{{/if}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="${content.description}">
+    <meta name="description" content="{{{page.description}}}">
     <meta name="author" content="Apache NetBeans">
-    <meta name="keywords" content="${content.keywords}">
+    <meta name="keywords" content="{{{page.keywords}}}">
     <meta name="generator" content="Apache NetBeans">
-    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{{uiRootPath}}}/css/font-awesome.min.css">
     <link rel="alternate" type="application/atom+xml" title="Apache NetBeans Blog" href="https://netbeans.apache.org/blogs/atom" />
-    <% if (content.syntax) { %><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css"> <% } %>
-    <link rel="stylesheet" href="/css/netbeans.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    {{#if page.attributes.syntax }}<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">{{/if}}
+    <link rel="stylesheet" href="{{{uiRootPath}}}/css/netbeans.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{{uiRootPath}}}/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{{uiRootPath}}}/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{{uiRootPath}}}/favicon-16x16.png">
+    <link rel="manifest" href="{{{uiRootPath}}}/site.webmanifest">
+    <link rel="mask-icon" href="{{{uiRootPath}}}/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#ffc40d">
     <meta name="theme-color" content="#ffffff">
-    <link href="/css/font-open-sans.css" rel="stylesheet">
+    <link href="{{{uiRootPath}}}/css/font-open-sans.css" rel="stylesheet">
     <!--
         Licensed to the Apache Software Foundation (ASF) under one
         or more contributor license agreements.  See the NOTICE file
