@@ -1,4 +1,4 @@
-<%/*
+{{!
 
     Licensed to the Apache Software Foundation (ASF) under one
     or more contributor license agreements.  See the NOTICE file
@@ -17,18 +17,18 @@
     specific language governing permissions and limitations
     under the License.
 
-*/%>
-<%/*
+}}
+{{!
 
     page_front.gsp: Front page layout.
 
-*/%>
+}}
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
-  <%include "templatesparts/head.gsp"%>
+  {{>head}}
   <body>
-    <%include "templatesparts/menu.gsp"%>
-    <%include "templatesparts/news.gsp"%>
+    {{>menu}}
+    {{>news}}
     <div class='grid-container'>
       <div style='margin: 2rem 0' class='grid-x grid-margin-x align-middle'>
         <div class='cell large-2 medium-3 small-5'><img src='/images/apache-netbeans.svg'></img>
@@ -41,10 +41,10 @@
       </div>
     </div>
     <div class='grid-container'>
-      ${content.body}
+      {{{page.contents}}}
     </div>
-    <%include "templatesparts/tools.gsp"%>
-    <%include "templatesparts/footer.gsp"%>
-    <%include "templatesparts/scripts.gsp"%>       
+    {{>tools}}
+    {{>footer}}
+    {{>scripts}}
   </body>
 </html>

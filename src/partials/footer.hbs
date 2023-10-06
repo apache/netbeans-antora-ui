@@ -1,4 +1,4 @@
-<%/*
+{{!
 
     Licensed to the Apache Software Foundation (ASF) under one
     or more contributor license agreements.  See the NOTICE file
@@ -17,20 +17,20 @@
     specific language governing permissions and limitations
     under the License.
 
-*/%>
-<%/*
+}}
+{{!
 
     The Apache NetBeans site must comply with the 
     "Apache Website Navigation Links Policy" https://www.apache.org/foundation/marks/pmcs#navigation
 
     This seems to be a good place to comply with the policy.
 
-*/%>
+}}
     <div class='grid-container incubator-area' style='margin-top: 64px'>
       <div class='grid-x grid-padding-x'>
         <div class='large-auto cell text-center'>
           <a href="https://www.apache.org/">
-            <img style="width: 320px" title="Apache Software Foundation" src="/images/asf_logo_wide.svg" />
+            <img style="width: 320px" title="Apache Software Foundation" src="{{{uiRootPath}}}/images/asf_logo_wide.svg" />
           </a>
         </div>
         <div class='large-auto cell text-center'>
@@ -44,7 +44,7 @@
       <div class="grid-container">
         <div class="grid-x grid-padding-x">
           <div class="large-auto cell">
-                    <% /* See https://www.apache.org/foundation/marks/pmcs#navigation */ %>
+                    {{! See https://www.apache.org/foundation/marks/pmcs#navigation }}
             <h1><a href="/about/index.html">About</a></h1>
             <ul>
               <li><a href="https://netbeans.apache.org/community/who.html">Who's Who</a></li>
@@ -100,7 +100,7 @@
           <p>Oracle and Java are registered trademarks of Oracle and/or its affiliates.</p>
           <p>The Apache NetBeans website conforms to the <a href="https://privacy.apache.org/policies/privacy-policy-public.html">Apache Software Foundation Privacy Policy</a></p>
         </div>
-            <%
+            {{!
                 /* This is used for debugging the website rendering, it displays the 'content' variable. Just set the "debug" metadata to a not null value (in asciidoc documents add ":debug: yes") to render this area. */
                  if (content.debug != null) {
                      out.println("<pre style='background: #777; color: #eee;'>");
@@ -111,7 +111,7 @@
                      }
                      out.println("</pre>");
                  }
-             %>
+            }}
       </div>
     </div>
 
