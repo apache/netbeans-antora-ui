@@ -209,7 +209,7 @@ async function bundleTask (cb) {
   buildTask()
   vfs
     .src('**/*', { base: destDir, cwd: destDir })
-    .pipe(zip.dest(path.join(buildDir, 'ui-bundle.zip')))
+    .pipe(zip.dest(path.join(buildDir, 'netbeans-ui-bundle.zip')))
 }
 
 module.exports = {
