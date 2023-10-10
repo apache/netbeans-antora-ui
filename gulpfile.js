@@ -49,6 +49,7 @@ async function bundle () {
     vfs.src('css/*.css', opts),
     vfs.src('js/**/*.js', opts),
     // here we exclude some script for conversion
+    vfs.src('helpers/*.js', opts),
     vfs.src('images/**/*.{svg,png,gif,jpg}', opts),
     vfs.src('layouts/*.hbs', opts),
     vfs.src('partials/*.hbs', opts))
