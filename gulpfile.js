@@ -51,6 +51,9 @@ async function bundle () {
     // here we exclude some script for conversion
     vfs.src('helpers/*.js', opts),
     vfs.src('images/**/*.{svg,png,gif,jpg}', opts),
+    vfs.src('images/fav/browserconfig.xml', opts),
+    vfs.src('images/fav/site.webmanifest', opts),
+    vfs.src('images/fav/favicon.ico', opts),
     vfs.src('layouts/*.hbs', opts),
     vfs.src('partials/*.hbs', opts))
     .pipe(vfs.dest(destDir))
