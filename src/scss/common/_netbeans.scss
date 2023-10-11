@@ -183,7 +183,7 @@ section.hero {
 }
 
 .hero.news, .orbit-wrapper {
-  background: linear-gradient(rgba(27, 106, 198, 0.88), rgba(46, 144, 232, 0.84)), url("/images/hero-background.jpg") no-repeat;
+  background: linear-gradient(rgba(27, 106, 198, 0.88), rgba(46, 144, 232, 0.84)), url("../images/hero-background.jpg") no-repeat;
   background-size: cover;
   background-position: center bottom;
 }
@@ -193,13 +193,13 @@ section.hero {
 }
 
 /*.netbeans-bg {
-  background: url('/images/hero-background.jpg') no-repeat;
+  background: url('../images/hero-background.jpg') no-repeat;
   background-size: cover;
   background-position: center bottom;
 }
 
 .netbeans-bg-1 {
-  background: url('/images/hero-background-2.jpg') no-repeat;
+  background: url('../images/hero-background-2.jpg') no-repeat;
   background-size: cover;
   background-position: center bottom;
 }*/
