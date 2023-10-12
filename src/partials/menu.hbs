@@ -29,6 +29,9 @@
     </div>
     <div class="top-bar-right">
         <ul class="vertical medium-horizontal menu" data-responsive-menu="drilldown medium-dropdown">
+            {{#if env.SITE_SEARCH_PROVIDER}}
+            <li> <input id="search-input" type="text" placeholder="Search the docs"> </li>
+            {{/if}}
             <li> <a href="{{siteRootPath}}/front/main/community/index.html">Community</a> </li>
             <li> <a href="{{siteRootPath}}/front/main/participate/index.html">Participate</a> </li>
             <li> <a href="{{siteRootPath}}/front/main/blogs/index.html">Blog</a></li>

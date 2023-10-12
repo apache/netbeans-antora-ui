@@ -30,9 +30,12 @@
     {{>menu}}
     {{>news}}
     <div class='grid-container main-content'>
+      <article class="doc">
+      <h1 style="visibily: hidden">{{{page.title}}}</h1>
       {{>wiki-index}}
       {{{page.contents}}}
       {{>tools}}
+      </article>
     </div>
     {{>footer}}
     {{>scripts}}
