@@ -17,5 +17,23 @@
     specific language governing permissions and limitations
     under the License.
 
+    page.gsp: A main area with a right aside for TOCs.
+
 }}
-{{{page.contents}}}
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  {{>head}}
+  <body>
+    {{>menu}}
+    {{>news}}
+    <div class='grid-container main-content'>
+      <article class="doc">
+      <h1 class="sect0">{{{page.title}}}</h1>
+      {{{page.contents}}}
+      </article>
+      {{>tools}}
+    </div>
+    {{>footer}}
+    {{>scripts}}
+  </body>
+</html>

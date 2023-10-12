@@ -27,6 +27,7 @@
     {{>menu}}
     {{>news}}
     <div class='grid-container main-content tutorial'>
+      <article class="doc">
       <h1 class="sect0">{{{page.title}}}</h1>
             {{#unless page.attributes.reviewed }}
             <div class="sectionbody">
@@ -50,6 +51,7 @@
             {{/unless}}
       {{{page.contents}}}
       {{>tools}}
+      </article>
     </div>
     {{>footer}}
     {{>scripts}}
