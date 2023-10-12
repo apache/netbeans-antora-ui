@@ -30,10 +30,12 @@
     {{>menu}}
     {{>news}}
     <div class='grid-container main-content'>
+      <article class="doc">
       <h1 class="sect1">{{{page.title}}}</h1>
       <div class="blogdate">{{{ nicedate page.attributes.revdate }}}</div>
       {{{page.contents}}}
       {{>tools}}
+      </article>
     </div>
     {{>footer}}
     {{>scripts}}

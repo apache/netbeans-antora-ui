@@ -23,6 +23,10 @@
     Scripts elements needed for pages in body element
 
 }}
+
+{{#if env.SITE_SEARCH_PROVIDER}}
+{{> search-scripts}}
+{{/if}}
     <script src="{{{uiRootPath}}}/js/vendor/jquery-3.7.1.min.js"></script>
     <script src="{{{uiRootPath}}}/js/vendor/what-input.js"></script>
     <script src="{{{uiRootPath}}}/js/vendor/foundation.min.js"></script>
