@@ -1,5 +1,5 @@
-// Foundation for Sites by ZURB
-// foundation.zurb.com
+// Foundation for Sites
+// https://get.foundation
 // Licensed under MIT Open Source
 
 ////
@@ -196,6 +196,7 @@ $maincontent-class: 'off-canvas-content' !default;
     left: 0;
     height: 100%;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 
     @each $name, $size in $sizes {
       @include breakpoint($name) {
@@ -233,6 +234,7 @@ $maincontent-class: 'off-canvas-content' !default;
     right: 0;
     height: 100%;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 
     @each $name, $size in $sizes {
       @include breakpoint($name) {
@@ -270,6 +272,7 @@ $maincontent-class: 'off-canvas-content' !default;
     left: 0;
     width: 100%;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 
     @each $name, $size in $sizes {
       @include breakpoint($name) {
@@ -306,6 +309,7 @@ $maincontent-class: 'off-canvas-content' !default;
     left: 0;
     width: 100%;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 
     @each $name, $size in $sizes {
       @include breakpoint($name) {
@@ -362,8 +366,13 @@ $maincontent-class: 'off-canvas-content' !default;
 /// Sets the styles for the content container.
 @mixin off-canvas-content() {
   transform: none;
-  transition: transform $offcanvas-transition-length $offcanvas-transition-timing;
   backface-visibility: hidden;
+
+  // Bind to has-transition-X class to prevent transition for transform:none
+  &.has-transition-overlap,
+  &.has-transition-push {
+    transition: transform $offcanvas-transition-length $offcanvas-transition-timing;
+  }
 
   // Transform scope until the element is closed (makes sure transitionend gets triggered)
   &.has-transition-push {
@@ -378,10 +387,10 @@ $maincontent-class: 'off-canvas-content' !default;
 
 /// Adds styles that reveal an off-canvas panel.
 @mixin off-canvas-reveal(
-$position: left,
-$zindex: $offcanvas-reveal-zindex,
-$content: $maincontent-class,
-$breakpoint: small
+  $position: left,
+  $zindex: $offcanvas-reveal-zindex,
+  $content: $maincontent-class,
+  $breakpoint: small
 ) {
   transform: none;
   z-index: $zindex;
@@ -416,10 +425,10 @@ $breakpoint: small
   visibility: visible;
   height: auto;
   position: static;
-  background: inherit;
-  width: inherit;
-  overflow: inherit;
-  transition: inherit;
+  background: none;
+  width: auto;
+  overflow: visible;
+  transition: none;
 
   // Increase CSS specificity
   &.position-left,
@@ -448,10 +457,10 @@ $breakpoint: small
     @include off-canvas-base;
 
     // Force position absolute for nested off-canvas because fixed doesn't work for push transition within the transform scope.
-    @at-root .#{$maincontent-class} & {
-      // NOTE: since overlap transition is currently forced if nested, there's no need to force position absolute until nested push transition is supported.
-      // position: absolute;
-    }
+    // @at-root .#{$maincontent-class} & {
+    //   // NOTE: since overlap transition is currently forced if nested, there's no need to force position absolute until nested push transition is supported.
+    //   position: absolute;
+    // }
   }
 
   // Off-canvas container with absolute position
