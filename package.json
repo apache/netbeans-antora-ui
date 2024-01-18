@@ -7,6 +7,9 @@
         "src/**/*",
         "build/**/*"
     ],
+    "scripts": {
+      "gulp": "gulp"
+    },
     "devDependencies": {
         "@asciidoctor/core": "~2.2",
         "eslint-config-standard": "~16.0",
