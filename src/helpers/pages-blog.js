@@ -47,6 +47,9 @@ function blogcontent (s) {
   const startpoint = Math.min( startofparagraph>-1 ? startofparagraph : Infinity, startofpreamble >-1 ? startofpreamble: Infinity)
   const endpoint = Math.min( endofsection>-1 ? endofsection : Infinity, endofarticle >-1 ? endofarticle: Infinity)
   const split = s.substring( startpoint, endpoint)
-  return split
+  // hack for image
+  const imagerewrite = split.replaceAll('"../../../_images','"../_images')
+  //
+  return imagerewrite
 }
 
