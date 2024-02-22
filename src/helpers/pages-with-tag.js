@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = (tag, custom, { data }) => {
   const { contentCatalog, site } = data.root
   const pages = contentCatalog.getPages(({ asciidoc, out }) => {

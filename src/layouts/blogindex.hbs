@@ -33,10 +33,10 @@ page_noaside.gsp: A main area with no aside.
             <article class="doc">
             <h1 class="sect1">{{{page.title}}}</h1>
             {{#each (pages-blog 'blogentry')}}
-            <div class="blogdate">{{{ nicedate ./attributes.revdate }}}</div>
+            <div class="blogdate">{{{ nicedate ./filtredrevdate }}}</div>
             <div class="blogtitle"><a href="{{{relativize ./url}}}">{{ ./title }}</a></div>
             <div class="blogbody">
-               {{{ ./contents }}}
+               {{{ ./filtredcontent }}}
             </div>
             {{/each}}     
             {{{page.contents}}}
