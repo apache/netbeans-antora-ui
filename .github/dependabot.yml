@@ -21,3 +21,5 @@ updates:
     directory: '/'
     schedule:
       interval: 'daily'
+    groups:
+       all-dependencies:
