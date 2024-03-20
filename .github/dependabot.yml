@@ -23,3 +23,5 @@ updates:
       interval: 'daily'
     groups:
        all-dependencies:
+          patterns:
+            - "*" 
