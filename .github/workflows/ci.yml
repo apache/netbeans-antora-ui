@@ -38,5 +38,5 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: 20
-    - run: --cache=.cache/npm install
-    - run: --cache=.cache/npm run gulp -- bundle
+    - run: npm --cache=.cache/npm install
+    - run: npm --cache=.cache/npm run gulp -- bundle
