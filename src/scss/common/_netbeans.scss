@@ -97,6 +97,11 @@ code {
   border: 0;
 }
 
+code:not(.hljs) {
+  background-color: $nb-pre-background;
+  border: 1px solid #EEE;
+}
+
 pre {
   background-color: $nb-pre-background;
   border: 1px solid #CCC;
