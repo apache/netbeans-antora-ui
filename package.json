@@ -12,7 +12,7 @@
     },
     "devDependencies": {
         "@asciidoctor/core": "~3.0",
-        "@vscode/gulp-vinyl-zip": "~2.5",
+        "@vscode/gulp-vinyl-zip": "~2.6",
         "eslint-config-standard": "~17.1",
         "fancy-log": "~2.0",
         "fs-extra": "~11.2",
@@ -23,7 +23,7 @@
         "handlebars": "~4.7",
         "js-yaml": "~4.1",
         "merge-stream": "~2.0",
-        "sass": "^1.75.0",
+        "sass": "^1.77.4",
         "vinyl-fs": "~4.0"
     }
 }
