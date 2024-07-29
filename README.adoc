@@ -1,3 +1,6 @@
 # Apache NetBeans antora UI bundle 
 
+WARNING: This repository contains files derived from the Antora Default UI, which is MPL2.0 licensed.
+Therefore, the contents of this repository must NOT be included in an Apache release.
+
 

@@ -29,39 +29,9 @@
   <body>
     {{>menu}}
     {{>news}}
-    <div class='grid-container main-content'>
-      <h1 class="sect1">{{{page.title}}}</h1>
-      {{>wiki-devindexbread}}
-      {{{page.contents}}}
-{{! order by wiki section on former wiki }}
-{{! toc section first }}
-      <div id="toc" class="toc"> 
-        <div id="toctitle"></div>
-          <ul class="sectlevel1"> 
-            <li>{{page.title}}<br>
-              <ul class="sectlevel2">    
-{{#each (wikiindex)}}
-                 <li><a href="#{{id}}">{{name}}</a></li>
-{{/each}}
-              </ul>
-            </li>
-          </ul>
-        </div>
-{{! content by aggregation }}
-{{#each (wikiindex)}}
-       <div class="sect2">
-         <h3 id="{{id}}">{{name}}</h3>
-         <div class="ulist">
-           <ul>
-    {{#each (pages-with-tag 'devfaq' id)}}
-             <li><p><a href="{{{relativize ./url}}}">{{{./title}}}</a>
-{{#if (iftaginpage this 'needsreview') }}[needs review]{{/if}}</p></li>
-    {{/each}}
-           </ul>
-         </div>
-       </div>
-{{/each}}
-      {{>tools}}
+    <div class="body">
+    {{>nav}}
+    {{>main}}    
     </div>
     {{>footer}}
     {{>scripts}}
