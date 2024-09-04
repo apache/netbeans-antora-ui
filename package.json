@@ -17,13 +17,13 @@
         "fancy-log": "~2.0",
         "fs-extra": "~11.2",
         "gulp": "~5.0",
-        "gulp-eslint-new": "~2.2.0",
+        "gulp-eslint-new": "~2.3.0",
         "gulp-rename": "~2.0.0",
         "gulp-sass": "~5.1",
         "handlebars": "~4.7",
         "js-yaml": "~4.1",
         "merge-stream": "~2.0",
-        "sass": "^1.77.8",
+        "sass": "^1.78.0",
         "vinyl-fs": "~4.0"
     }
 }
