@@ -23,7 +23,7 @@
         "handlebars": "~4.7",
         "js-yaml": "~4.1",
         "merge-stream": "~2.0",
-        "sass": "^1.78.0",
+        "sass": "^1.79.4",
         "vinyl-fs": "~4.0"
     }
 }
