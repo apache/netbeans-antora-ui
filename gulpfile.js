@@ -1,6 +1,6 @@
 'use strict'
 
-const { src, series } = require('gulp')
+const { src, series, parallel } = require('gulp')
 const eslint = require('gulp-eslint-new')
 const sass = require('gulp-sass')(require('sass'))
 const vfs = require('vinyl-fs')
@@ -20,6 +20,33 @@ function taskJSLint (cb) {
     .on('finish', cb)
 }
 
+function copyfoundationscss (cb) {
+  const opts = { base: '', cwd: '' }
+  vfs.src('node_modules/foundation-sites/scss/**/*', opts)
+    .pipe(vfs.dest('src/scss/_vendor/foundation-sites/scss'))
+    .on('finish', cb)
+}
+
+function copyfoundationvendor (cb) {
+  const opts = { base: '', cwd: '' }
+  vfs.src('node_modules/foundation-sites/_vendor/**/*', opts)
+    .pipe(vfs.dest('src/scss/_vendor/foundation-sites/_vendor'))
+    .on('finish', cb)
+}
+
+function copyfoundationjs (cb) {
+  const opts = { base: '', cwd: '' }
+  vfs.src('node_modules/foundation-sites/dist/js/foundation.min.js', opts)
+    .pipe(vfs.dest('src/js/vendor/'))
+    .on('finish', cb)
+}
+
+function copymotionui (cb) {
+  const opts = { base: '', cwd: '' }
+  vfs.src('node_modules/motion-ui/src/**/*', opts)
+    .pipe(vfs.dest('src/scss/_vendor/motion-ui/'))
+    .on('finish', cb)
+}
 // process scss
 function scss (cb) {
   const opts = { base: srcDir, cwd: srcDir }
@@ -57,8 +84,9 @@ function zipbundle (cb) {
     .on('finish', cb)
 }
 
-const buildonly = series(taskJSLint, scss, prepareassets)
-const buildandzip = series(taskJSLint, scss, prepareassets, zipbundle)
+const copyfoundation = parallel(copyfoundationscss, copyfoundationvendor, copyfoundationjs)
+const buildonly = series(taskJSLint, copyfoundation, copymotionui, scss, prepareassets)
+const buildandzip = series(taskJSLint, copyfoundation, copymotionui, scss, prepareassets, zipbundle)
 
 module.exports = {
   build: buildonly,
