@@ -19,11 +19,11 @@
         "gulp": "~5.0",
         "gulp-eslint-new": "~2.4.0",
         "gulp-rename": "~2.0.0",
-        "gulp-sass": "~5.1",
+        "gulp-sass": "~6.0",
         "handlebars": "~4.7",
         "js-yaml": "~4.1",
         "merge-stream": "~2.0",
-        "sass": "^1.80.6",
+        "sass": "^1.81.0",
         "vinyl-fs": "~4.0",
         "foundation-sites":"6.9.0",
         "motion-ui":"2.0.8"
