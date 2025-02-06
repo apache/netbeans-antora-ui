@@ -15,7 +15,7 @@
         "@vscode/gulp-vinyl-zip": "~2.6",
         "eslint-config-standard": "~17.1",
         "fancy-log": "~2.0",
-        "fs-extra": "~11.2",
+        "fs-extra": "~11.3",
         "gulp": "~5.0",
         "gulp-eslint-new": "~2.4.0",
         "gulp-rename": "~2.0.0",
@@ -23,7 +23,7 @@
         "handlebars": "~4.7",
         "js-yaml": "~4.1",
         "merge-stream": "~2.0",
-        "sass": "^1.83.0",
+        "sass": "^1.84.0",
         "vinyl-fs": "~4.0",
         "foundation-sites":"6.9.0",
         "motion-ui":"2.0.8"
