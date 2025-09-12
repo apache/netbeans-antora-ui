@@ -5,3 +5,4 @@ build
 src/js/vendor/foundation.min.js
 src/scss/_vendor/motion-ui/
 src/scss/_vendor/foundation-sites/
+/nbproject/private/
