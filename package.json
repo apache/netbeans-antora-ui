@@ -17,7 +17,7 @@
         "fancy-log": "~2.0",
         "fs-extra": "~11.3",
         "gulp": "~5.0",
-        "gulp-eslint-new": "~2.4.0",
+        "gulp-eslint-new": "~2.5.0",
         "gulp-rename": "~2.1.0",
         "gulp-sass": "~6.0",
         "handlebars": "~4.7",
