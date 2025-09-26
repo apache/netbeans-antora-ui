@@ -21,6 +21,7 @@
         "gulp-rename": "~2.1.0",
         "gulp-sass": "~6.0",
         "handlebars": "~4.7",
+        "@highlightjs/cdn-assets":"~11.11.1",
         "js-yaml": "~4.1",
         "merge-stream": "~2.0",
         "sass": "^1.93.0",
