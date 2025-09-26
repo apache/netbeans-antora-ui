@@ -27,6 +27,20 @@ function copyfoundationscss (cb) {
     .on('finish', cb)
 }
 
+function copyhighlightjs (cb) {
+  const opts = { base: '', cwd: '' }
+  vfs.src('node_modules/@highlightjs/cdn-assets/highlight.min.js', opts)
+    .pipe(vfs.dest('src/js/vendor'))
+    .on('finish', cb)
+}
+
+function copyhighlightcss (cb) {
+  const opts = { base: '', cwd: '' }
+  vfs.src('node_modules/@highlightjs/cdn-assets/styles/default.min.css', opts)
+    .pipe(vfs.dest('src/css/highlightjs'))
+    .on('finish', cb)
+}
+
 function copyfoundationvendor (cb) {
   const opts = { base: '', cwd: '' }
   vfs.src('node_modules/foundation-sites/_vendor/**/*', opts)
@@ -65,6 +79,7 @@ function prepareassets (cb) {
   const assetsGlob = [
     'fonts/*.{ttf,woff*(2),svg,eot}',
     'css/*.css',
+    'css/highlightjs/*.css',
     'js/**/*.js',
     'helpers/*.js',
     'images/**/*.{svg,png,gif,jpg}',
@@ -85,8 +100,9 @@ function zipbundle (cb) {
 }
 
 const copyfoundation = parallel(copyfoundationscss, copyfoundationvendor, copyfoundationjs)
-const buildonly = series(taskJSLint, copyfoundation, copymotionui, scss, prepareassets)
-const buildandzip = series(taskJSLint, copyfoundation, copymotionui, scss, prepareassets, zipbundle)
+const copyhighlight = parallel(copyhighlightjs, copyhighlightcss)
+const buildonly = series(taskJSLint, copyfoundation, copyhighlight, copymotionui, scss, prepareassets)
+const buildandzip = series(taskJSLint, copyfoundation, copyhighlight, copymotionui, scss, prepareassets, zipbundle)
 
 module.exports = {
   build: buildonly,
