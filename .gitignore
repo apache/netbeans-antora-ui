@@ -3,8 +3,7 @@ public
 build
 .cache
 src/css/highlightjs/
-src/js/vendor/foundation.min.js
-src/js/vendor/highlight.min.js
+src/js/vendor/
 src/scss/_vendor/motion-ui/
 src/scss/_vendor/foundation-sites/
 /nbproject/private/

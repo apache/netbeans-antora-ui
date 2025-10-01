@@ -34,6 +34,27 @@ function copyhighlightjs (cb) {
     .on('finish', cb)
 }
 
+function copyjqueryjs (cb) {
+  const opts = { base: '', cwd: '' }
+  vfs.src('node_modules/jquery/dist/jquery.min.js', opts)
+    .pipe(vfs.dest('src/js/vendor'))
+    .on('finish', cb)
+}
+
+function copyjquerycolorboxjs (cb) {
+  const opts = { base: '', cwd: '' }
+  vfs.src('node_modules/jquery-colorbox/jquery.colorbox-min.js', opts)
+    .pipe(vfs.dest('src/js/vendor'))
+    .on('finish', cb)
+}
+
+function copywhatinputjs (cb) {
+  const opts = { base: '', cwd: '' }
+  vfs.src('node_modules/what-input/dist/what-input.min.js', opts)
+    .pipe(vfs.dest('src/js/vendor'))
+    .on('finish', cb)
+}
+
 function copyhighlightcss (cb) {
   const opts = { base: '', cwd: '' }
   vfs.src('node_modules/@highlightjs/cdn-assets/styles/default.min.css', opts)
@@ -101,8 +122,10 @@ function zipbundle (cb) {
 
 const copyfoundation = parallel(copyfoundationscss, copyfoundationvendor, copyfoundationjs)
 const copyhighlight = parallel(copyhighlightjs, copyhighlightcss)
-const buildonly = series(taskJSLint, copyfoundation, copyhighlight, copymotionui, scss, prepareassets)
-const buildandzip = series(taskJSLint, copyfoundation, copyhighlight, copymotionui, scss, prepareassets, zipbundle)
+const copyjquery = parallel(copyjqueryjs, copyjquerycolorboxjs)
+const copywhatinput = parallel(copywhatinputjs)
+const buildonly = series(taskJSLint, copyfoundation, copyhighlight, copyjquery, copywhatinput, copymotionui, scss, prepareassets)
+const buildandzip = series(taskJSLint, copyfoundation, copyhighlight, copyjquery, copywhatinput, copymotionui, scss, prepareassets, zipbundle)
 
 module.exports = {
   build: buildonly,
