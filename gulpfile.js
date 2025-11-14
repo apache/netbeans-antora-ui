@@ -124,8 +124,10 @@ const copyfoundation = parallel(copyfoundationscss, copyfoundationvendor, copyfo
 const copyhighlight = parallel(copyhighlightjs, copyhighlightcss)
 const copyjquery = parallel(copyjqueryjs, copyjquerycolorboxjs)
 const copywhatinput = parallel(copywhatinputjs)
-const buildonly = series(taskJSLint, copyfoundation, copyhighlight, copyjquery, copywhatinput, copymotionui, scss, prepareassets)
-const buildandzip = series(taskJSLint, copyfoundation, copyhighlight, copyjquery, copywhatinput, copymotionui, scss, prepareassets, zipbundle)
+const buildonly = series(taskJSLint, copyfoundation, copyhighlight, copyjquery,
+  copywhatinput, copymotionui, scss, prepareassets)
+const buildandzip = series(taskJSLint, copyfoundation, copyhighlight, copyjquery,
+  copywhatinput, copymotionui, scss, prepareassets, zipbundle)
 
 module.exports = {
   build: buildonly,
