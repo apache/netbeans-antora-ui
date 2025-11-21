@@ -28,7 +28,7 @@
         "js-yaml": "~4.1",
         "merge-stream": "~2.0",
         "motion-ui": "2.0.8",
-        "sass": "^1.94.1",
+        "sass": "^1.94.2",
         "vinyl-fs": "~4.0",
         "what-input": "~5.2.12"
     }
