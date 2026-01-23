@@ -23,12 +23,12 @@
         "gulp-rename": "~2.1.0",
         "gulp-sass": "~6.0",
         "handlebars": "~4.7",
-        "jquery": "~3.7.1",
+        "jquery": "~4.0.0",
         "jquery-colorbox": "~1.6.4",
         "js-yaml": "~4.1",
         "merge-stream": "~2.0",
         "motion-ui": "2.0.8",
-        "sass": "^1.94.2",
+        "sass": "^1.97.3",
         "vinyl-fs": "~4.0",
         "what-input": "~5.2.12"
     }
