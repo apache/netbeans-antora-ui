@@ -25,7 +25,7 @@
         "handlebars": "~4.7",
         "jquery": "~4.0.0",
         "jquery-colorbox": "~1.6.4",
-        "js-yaml": "~5.3",
+        "js-yaml": "~5.4",
         "merge-stream": "~2.0",
         "motion-ui": "2.0.8",
         "sass": "^1.103.1",
